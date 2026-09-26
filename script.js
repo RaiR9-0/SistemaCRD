@@ -1,4 +1,13 @@
 document.getElementById('btn-calcular').addEventListener('click', procesarSimulacion);
+document.getElementById('btn-limpiar').addEventListener('click', limpiarFormulario);
+
+function limpiarFormulario() {
+document.getElementById('credit-form').reset();
+document.querySelector('#tabla-amortizacion tbody').innerHTML = '';
+document.getElementById('total-pagado').textContent = '';
+document.getElementById('datos-cliente').textContent = '';
+}
+
 function procesarSimulacion() {
 const montoInput = parseFloat(document.getElementById('monto').value);
 const tasaAnualInput = parseFloat(document.getElementById('tasa').value) / 100;
@@ -10,7 +19,11 @@ return;
 
 }
 const v = id => document.getElementById(id).value.trim();
-document.getElementById('datos-cliente').textContent = `Cliente: ${v('nombre')} | Dirección: ${v('direccion')} | Asesor: ${v('asesor')}`;
+if (!v('nombre') || !v('identificacion') || !v('asesor')) {
+alert("Complete nombre, identificación y asesor antes de consultar.");
+return;
+}
+document.getElementById('datos-cliente').textContent = `Cliente: ${v('nombre')} | Identificación: ${v('identificacion')} | Asesor: ${v('asesor')}`;
 const amortizacionCapital =montoInput / plazoMeses;
 const tasaMensualEquivalente = tasaAnualInput / 12;
 let saldoInsoluto = montoInput;

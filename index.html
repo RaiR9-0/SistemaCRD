@@ -3,17 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Banco JFDLC</title>
+<title>BANCO JFDLC</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="container">
+<img src="logo_sup.jpg" alt="Logo Banco JFDLC" style="max-height:80px;display:block;margin:0 auto 10px">
 <h1>Simulador de Crédito Banco JFDLC</h1>
 <form id="credit-form">
 <label for="nombre">Nombre del Cliente:</label>
 <input type="text" id="nombre" required>
-<label for="direccion">Dirección:</label>
-<input type="text" id="direccion" required>
+<label for="identificacion">Identificación:</label>
+<select id="identificacion" required>
+<option value="" disabled selected>Seleccione...</option>
+<option value="Pasaporte">Pasaporte</option>
+<option value="INE">INE</option>
+<option value="Licencia de conducir">Licencia de conducir</option>
+</select>
 <label for="asesor">Asesor del Banco:</label>
 <input type="text" id="asesor" required>
 <label for="monto">Monto del Crédito Solicitado ($):</label>
@@ -28,6 +34,7 @@
 <option value="48" selected>48 meses</option>
 </select>
 <button type="button" id="btn-calcular">Calcular</button>
+<button type="button" id="btn-limpiar">Limpiar</button>
 </form>
 <table id="tabla-amortizacion">
 <caption id="datos-cliente"></caption>
