@@ -7,14 +7,14 @@ padding: 30px;
 }
 .container {
 max-width: 900px;
-background: #ffffff;
+background: #fafafa;
 margin: 0 auto;
 padding: 30px;
 border-radius: 8px;
 box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 h1 {
-color: #003b73;
+color: #000000;
 text-align: center;
 margin-bottom: 25px;
 }

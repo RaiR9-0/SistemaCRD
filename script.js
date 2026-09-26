@@ -9,7 +9,9 @@ alert("Ingrese parámetros numéricos válidos e intente nuevamente.");
 return;
 
 }
-const amortizacionCapital = montoInput / plazoMeses;
+const v = id => document.getElementById(id).value.trim();
+document.getElementById('datos-cliente').textContent = `Cliente: ${v('nombre')} | Dirección: ${v('direccion')} | Asesor: ${v('asesor')}`;
+const amortizacionCapital =montoInput / plazoMeses;
 const tasaMensualEquivalente = tasaAnualInput / 12;
 let saldoInsoluto = montoInput;
 const tablaBody = document.querySelector('#tabla-amortizacion tbody');
